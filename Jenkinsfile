@@ -19,7 +19,7 @@ pipeline {
         
         stage('Deploy To Container'){
             steps {
-                deploy adapters: [tomcat9(credentialsId: 'TomcatCredential', path: '', url: 'http://52.90.225.114:8080/')], contextPath: 'mvnwebapp', war: '**/mvnwebapp.war'
+                deploy adapters: [tomcat9(credentialsId: 'TomcatCredential', path: '', url: 'http://52.90.225.114:8080/manager/html')], contextPath: 'mvnwebapp', war: '**/mvnwebapp.war'
             }
         }
     }//stages closing
